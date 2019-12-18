@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.classno3_demo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/fm"
+        android:label="周杰伦"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <service
+            android:name=".server.MusicServer"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+            <action android:name="com.angel.Android.MUSIC" />
+            <category android:name="android.intent.category.default" />
+        </intent-filter></service>
+
+        <service
+            android:name=".server.MusicServer2"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.angel.Android.MUSIC" />
+                <category android:name="android.intent.category.default" />
+            </intent-filter></service>
+
+        <activity android:name=".activities.ActivityPhoto" />
+        <activity android:name=".singactivities.Activity_List_Empty" />
+        <activity android:name=".singactivities.Activity_List3" />
+        <activity android:name=".singactivities.Activity_List2" />
+        <activity android:name=".singactivities.Activity_List1" />
+        <activity android:name=".activities.UnrActivity" />
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
